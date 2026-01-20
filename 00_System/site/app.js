@@ -303,7 +303,14 @@ const renderResults = () => {
 
     const title = document.createElement("h3");
     title.className = "result-title";
-    title.innerHTML = highlight(item.title || "Untitled", query);
+    
+    const titleLink = document.createElement("a");
+    titleLink.href = openUrl;
+    titleLink.target = "_blank";
+    titleLink.rel = "noopener noreferrer";
+    titleLink.innerHTML = highlight(item.title || "Untitled", query);
+    
+    title.appendChild(titleLink);
 
     const tags = document.createElement("div");
     tags.className = "tags";
