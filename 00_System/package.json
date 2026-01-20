@@ -1,0 +1,11 @@
+{
+  "name": "clippings-search",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build_index_api.mjs"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}

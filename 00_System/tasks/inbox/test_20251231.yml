@@ -1,0 +1,4 @@
+tasks:
+  - title: "テストタスク"
+    status: "Not yet"
+    tags: ["テスト"]

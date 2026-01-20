@@ -1,0 +1,50 @@
+tasks:
+  - title: "【目的設計・手前】30代までのロードマップのゴール定義と目標の細分化"
+    status: "Not yet"
+    tags: ["人生設計"]
+  - title: "【目的設計・最終】起業以降の具体シュミレーションのゴール定義と目標の細分化"
+    status: "Not yet"
+    tags: ["人生設計"]
+  - title: "【運動】月次での負荷の管理"
+    status: "Not yet"
+    tags: ["運動"]
+  - title: "【健康】睡眠時間の可視化と打ち手の考案"
+    status: "Not yet"
+    tags: ["生活"]
+  - title: "【健康】薬を飲むことのルーティン化"
+    status: "Not yet"
+    tags: ["生活"]
+  - title: "【健康】スクリーンタイムの可視化と打ち手の考案"
+    status: "Not yet"
+    tags: ["生活"]
+  - title: "【健康】体重を記録すること、目標の細分化"
+    status: "Not yet"
+    tags: ["生活"]
+  - title: "【健康】寝る前にスマホを触るのをやめる習慣化"
+    status: "Not yet"
+    tags: ["生活"]
+  - title: "【健康】睡眠・スクリーンタイム・体重・胃腸の可視化と打ち手を考案する"
+    status: "Not yet"
+    tags: ["生活"]
+  - title: "【会社】メンターや上司にS評価の取り方について聞く"
+    status: "Not yet"
+    tags: ["MOTA"]
+  - title: "【書く】習慣化トラッカーの準備をする"
+    status: "Not yet"
+    tags: ["趣味"]
+  - title: "【読書】積読リストを作る（Amazon以外のシステム）"
+    status: "Not yet"
+    tags: ["読書"]
+  - title: "【読書】機械的に本の内容を収集するシステムを作る"
+    status: "Not yet"
+    tags: ["読書"]
+  - title: "【読書】アウトプット環境の整備"
+    status: "Not yet"
+    tags: ["読書"]
+  - title: "【貯蓄】貯金計画を立てる"
+    status: "Not yet"
+    tags: ["生活"]
+  - title: "【貯蓄】1ヶ月の支出内訳を確立する"
+    status: "Not yet"
+    tags: ["生活"]
+

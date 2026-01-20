@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clippings Search</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="title-block">
+          <p class="eyebrow">Clippings Search</p>
+          <h1>Find what you clipped.</h1>
+          <p class="subtitle">
+            Full-text search across Markdown clippings, tags, and metadata.
+          </p>
+        </div>
+        <div class="meta-card">
+          <div class="meta-item">
+            <span class="meta-label">Items</span>
+            <span id="metaCount">-</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Generated</span>
+            <span id="metaGenerated">-</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="panel card">
+        <div class="field-group">
+          <label for="searchInput">Search</label>
+          <div class="input-row">
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Title, tags, author, or body text"
+              autocomplete="off"
+            />
+            <button id="clearButton" class="button ghost" type="button">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-header">
+            <label>Tags</label>
+            <div class="tags-header-actions">
+              <span class="hint">AND filter</span>
+              <button id="clearTagsBtn" class="btn-ghost" type="button">Clear</button>
+            </div>
+          </div>
+          <div id="tagList" class="tag-list"></div>
+        </div>
+
+        <div class="field-group">
+          <label for="sortSelect">Sort</label>
+          <select id="sortSelect">
+            <option value="relevance">Relevance</option>
+            <option value="added_desc">Added (newest)</option>
+            <option value="added_asc">Added (oldest)</option>
+            <option value="title_asc">Title (A-Z)</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="results">
+        <div class="results-header">
+          <h2>Results</h2>
+          <span id="resultsCount" class="count-pill">0</span>
+        </div>
+        <div id="resultsList" class="results-list"></div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

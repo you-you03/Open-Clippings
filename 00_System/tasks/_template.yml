@@ -1,0 +1,7 @@
+title: "タスク名"
+status: "Not started"   # Notion Statusの選択肢名と一致させる
+do: "2026-01-02"        # 任意
+due: "2026-01-05"       # 任意
+flag: "High"            # NotionのSelect(Flag)の選択肢名と一致させる
+tags: ["Thesis"]        # Tags_DB（Relation先DBのTitle）またはページID
+project: "Graduation Research"  # Projects_DB（Relation先DBのTitle）またはページID

@@ -1,0 +1,50 @@
+name: Issue to Notion
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-to-notion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract Do and Due dates
+        id: extract_dates
+        run: |
+          echo "DO_DATE=$(echo '${{ github.event.issue.body }}' | grep -oE 'Do: [0-9\\-]+' | awk '{print $2}')" >> $GITHUB_ENV
+          echo "DUE_DATE=$(echo '${{ github.event.issue.body }}' | grep -oE 'Due: [0-9\\-]+' | awk '{print $2}')" >> $GITHUB_ENV
+
+      - name: Call Notion API
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          DO_DATE: ${{ env.DO_DATE }}
+          DUE_DATE: ${{ env.DUE_DATE }}
+        run: |
+          DO_DATE=${DO_DATE:-null}
+          DUE_DATE=${DUE_DATE:-null}
+          echo '{
+            "parent": { "database_id": "'$NOTION_DATABASE_ID'" },
+            "properties": {
+              "Name": {
+                "title": [
+                  {
+                    "text": {
+                      "content": "'$ISSUE_TITLE'"
+                    }
+                  }
+                ]
+              },
+              "Do": {
+                "date": { "start": '$DO_DATE' }
+              },
+              "Due": {
+                "date": { "start": '$DUE_DATE' }
+              }
+            }
+          }' | curl -X POST "https://api.notion.com/v1/pages" \
+            -H "Authorization: Bearer $NOTION_TOKEN" \
+            -H "Content-Type: application/json" \
+            -H "Notion-Version: 2022-06-28" \
+            --data @-
